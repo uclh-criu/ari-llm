@@ -1,2 +1,3 @@
 *.csv
-venv/prompts/
+venv/
+prompts/
