@@ -233,6 +233,8 @@ def write_csv(
     provider: str,
     model_id: str,
     use_structured_output: bool,
+    max_new_tokens: int,
+    temperature: float,
 ) -> None:
     output_csv.parent.mkdir(parents=True, exist_ok=True)
     file_exists = output_csv.exists()
@@ -248,6 +250,8 @@ def write_csv(
                     "provider",
                     "model_id",
                     "use_structured_output",
+                    "max_new_tokens",
+                    "temperature",
                     "output",
                 ]
             )
@@ -261,6 +265,8 @@ def write_csv(
                     provider,
                     model_id,
                     use_structured_output,
+                    max_new_tokens,
+                    temperature,
                     output,
                 ]
             )
@@ -304,6 +310,8 @@ def main() -> None:
         provider=provider,
         model_id=model_id,
         use_structured_output=USE_STRUCTURED_OUTPUT,
+        max_new_tokens=MAX_NEW_TOKENS,
+        temperature=TEMPERATURE,
     )
     print(f"Appended {len(rows)} rows to {output_csv}")
 
